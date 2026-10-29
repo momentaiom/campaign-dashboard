@@ -1,6 +1,53 @@
 {
- "updated_at": null,
- "totals": {},
- "per_day": [],
- "snapshots": []
+ "updated_at": "2026-10-29T10:10:23+00:00",
+ "totals": {
+  "requests": 477,
+  "processed": 468,
+  "delivered": 400,
+  "deferred": 0,
+  "opens": 188,
+  "unique_opens": 165,
+  "clicks": 30,
+  "unique_clicks": 7,
+  "bounces": 33,
+  "blocks": 27,
+  "spam_reports": 0,
+  "unsubscribes": 0,
+  "invalid_emails": 9,
+  "bounce_drops": 0,
+  "spam_report_drops": 0,
+  "unsubscribe_drops": 0
+ },
+ "per_day": [
+  {
+   "date": "2026-10-29",
+   "requests": 477,
+   "processed": 468,
+   "delivered": 400,
+   "deferred": 0,
+   "opens": 188,
+   "unique_opens": 165,
+   "clicks": 30,
+   "unique_clicks": 7,
+   "bounces": 33,
+   "blocks": 27,
+   "spam_reports": 0,
+   "unsubscribes": 0,
+   "invalid_emails": 9,
+   "bounce_drops": 0,
+   "spam_report_drops": 0,
+   "unsubscribe_drops": 0
+  }
+ ],
+ "snapshots": [
+  {
+   "t": "2026-10-29T10:10:23+00:00",
+   "requests": 477,
+   "delivered": 400,
+   "unique_opens": 165,
+   "unique_clicks": 7,
+   "bounces": 33,
+   "spam_reports": 0
+  }
+ ]
 }
