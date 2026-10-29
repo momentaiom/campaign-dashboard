@@ -45,6 +45,11 @@ body{font-family:K,system-ui,sans-serif;background:var(--bg);color:var(--ink);li
   background:radial-gradient(circle at 10% 15%,rgba(200,182,245,.5),transparent 40%),radial-gradient(circle at 90% 120%,rgba(122,82,224,.7),transparent 45%),linear-gradient(135deg,#0f0b45 0%,#241a8c 55%,#3d2bb5 100%)}
 .hero .wrap{display:flex;align-items:center;gap:20px;padding-top:28px;padding-bottom:84px}
 .hero img{height:52px;width:auto;flex:none}
+.brands{display:flex;align-items:center;gap:16px;flex:none}
+.brands .x{color:var(--lav);font-size:22px;font-weight:400;opacity:.8}
+.mp{display:flex;align-items:center;gap:10px;direction:ltr}
+.mp img{height:52px!important;width:auto;filter:drop-shadow(0 6px 12px rgba(0,0,0,.35))!important}
+.mp span{font-weight:800;font-size:17px;line-height:1.1;letter-spacing:.5px;color:#fff}
 .hero .divider{width:1px;align-self:stretch;margin:6px 4px;background:rgba(255,255,255,.25)}
 .byline{font-size:11.5px;letter-spacing:.5px;color:var(--lav);font-weight:700;direction:ltr;display:inline-flex;align-items:center;gap:6px;margin-top:2px}
 .byline img{height:18px!important;width:auto;filter:none!important}
@@ -88,7 +93,7 @@ main{margin-top:-60px;position:relative;padding-bottom:40px}
 .g-kpi{grid-template-columns:repeat(4,1fr);margin-top:16px}
 .g-two{grid-template-columns:1.6fr 1fr;margin-top:16px}
 @media (max-width:900px){.g-hero,.g-two{grid-template-columns:1fr}.g-kpi{grid-template-columns:repeat(2,1fr)}}
-@media (max-width:600px){.wrap{padding:0 16px}.hero .wrap{flex-wrap:wrap;gap:14px}.hero img{height:40px}.hero .divider{display:none}.live{order:3;width:100%;justify-content:center}}
+@media (max-width:600px){.wrap{padding:0 16px}.hero .wrap{flex-wrap:wrap;gap:14px}.hero img{height:40px}.mp img{height:40px!important}.mp span{font-size:14px}.brands{gap:10px;width:100%}.hero .grow{flex-basis:100%}.hero .divider{display:none}.live{order:3;width:100%;justify-content:center}}
 h2{font-size:16px;font-weight:800;margin:0 0 12px;display:flex;align-items:center;gap:8px}
 h2::before{content:"";width:14px;height:14px;flex:none;background:linear-gradient(135deg,var(--lav),var(--brand));clip-path:polygon(50% 0,62% 38%,100% 50%,62% 62%,50% 100%,38% 62%,0 50%,38% 38%)}
 .label{color:var(--muted);font-size:13px;font-weight:700}
@@ -147,12 +152,15 @@ footer .copy{direction:ltr;margin-top:6px;font-weight:700;color:var(--ink-2)}
   <svg class="spark" style="right:45%;top:18px;width:16px" viewBox="0 0 10 10" aria-hidden="true"><path d="M5 0L6.2 3.8 10 5 6.2 6.2 5 10 3.8 6.2 0 5 3.8 3.8Z"/></svg>
   <svg class="spark" style="left:22%;bottom:70px;width:10px;opacity:.5" viewBox="0 0 10 10" aria-hidden="true"><path d="M5 0L6.2 3.8 10 5 6.2 6.2 5 10 3.8 6.2 0 5 3.8 3.8Z"/></svg>
   <div class="wrap">
-    <img src="tanweel-logo.png" alt="Tanweel تنويل">
+    <div class="brands">
+      <img src="tanweel-logo.png" alt="Tanweel تنويل">
+      <span class="x" aria-hidden="true">×</span>
+      <div class="mp"><img src="moment-logo.png" alt=""><span>Moment<br>Plus</span></div>
+    </div>
     <span class="divider" aria-hidden="true"></span>
     <div class="grow">
       <h1 id="title">متابعة الحملة</h1>
       <div class="sub" id="sub"></div>
-      <div class="byline"><img src="moment-logo.png" alt="">Built by Moment Plus</div>
     </div>
     <div class="live" id="live"><span class="dot" id="dot"></span><span id="liveText">جارٍ التحميل…</span></div>
   </div>
