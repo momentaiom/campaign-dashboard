@@ -46,7 +46,29 @@ body{font-family:K,system-ui,sans-serif;background:var(--bg);color:var(--ink);li
 .hero .wrap{display:flex;align-items:center;gap:20px;padding-top:28px;padding-bottom:84px}
 .hero img{height:52px;width:auto;flex:none}
 .hero .divider{width:1px;align-self:stretch;margin:6px 4px;background:rgba(255,255,255,.25)}
-.byline{font-size:11.5px;letter-spacing:.5px;color:var(--lav);font-weight:700;direction:ltr;text-align:right}
+.byline{font-size:11.5px;letter-spacing:.5px;color:var(--lav);font-weight:700;direction:ltr;display:inline-flex;align-items:center;gap:6px;margin-top:2px}
+.byline img{height:18px!important;width:auto;filter:none!important}
+.card.insight{margin-top:16px;display:flex;gap:14px;align-items:flex-start;border-inline-start:4px solid var(--brand)}
+.insight.crit{border-inline-start-color:var(--crit)}.insight.warn{border-inline-start-color:var(--warn)}.insight.good{border-inline-start-color:var(--good)}
+.insight .ic{flex:none;width:34px;height:34px;border-radius:10px;display:flex;align-items:center;justify-content:center}
+.insight .ic svg{width:18px;height:18px}
+.insight.crit .ic{background:var(--crit-bg);color:var(--crit)}.insight.warn .ic{background:var(--warn-bg);color:var(--warn)}.insight.good .ic{background:var(--good-bg);color:var(--good)}
+.insight h3{margin:0 0 2px;font-size:15px;font-weight:800}
+.insight p{margin:0;color:var(--ink-2);font-size:14px}
+.chips{display:flex;gap:6px;flex-wrap:wrap;margin-top:6px}
+.chip{font-size:11.5px;background:var(--surface);border:1px solid var(--line);border-radius:99px;padding:1px 9px;color:var(--ink-2)}
+.chip b{color:var(--ink)}
+details.explain{margin-top:12px;font-size:13px;color:var(--ink-2)}
+details.explain summary{cursor:pointer;font-weight:700;color:var(--brand);list-style:none}
+details.explain summary::-webkit-details-marker{display:none}
+details.explain summary::before{content:"ⓘ ";}
+details.explain dl{margin:8px 0 0}
+details.explain dt{font-weight:800;color:var(--ink);margin-top:8px}
+details.explain dd{margin:0}
+.made{display:flex;align-items:center;justify-content:center;gap:10px;margin-top:14px;direction:ltr}
+.made img{height:34px;width:auto}
+.made .t{text-align:left;line-height:1.35}
+.made .t b{display:block;color:var(--ink);font-size:13px}
 .hero .brand{font-size:12px;letter-spacing:2px;color:var(--lav);font-weight:700}
 .hero h1{margin:2px 0 0;font-size:clamp(22px,4vw,32px);font-weight:800;line-height:1.35}
 .hero .sub{color:#d8cfff;font-size:14px}
@@ -130,7 +152,7 @@ footer .copy{direction:ltr;margin-top:6px;font-weight:700;color:var(--ink-2)}
     <div class="grow">
       <h1 id="title">متابعة الحملة</h1>
       <div class="sub" id="sub"></div>
-      <div class="byline">Built by Moment Plus</div>
+      <div class="byline"><img src="moment-logo.png" alt="">Built by Moment Plus</div>
     </div>
     <div class="live" id="live"><span class="dot" id="dot"></span><span id="liveText">جارٍ التحميل…</span></div>
   </div>
@@ -147,8 +169,23 @@ footer .copy{direction:ltr;margin-top:6px;font-weight:700;color:var(--ink-2)}
     <div class="card">
       <h2>صحة الإرسال</h2>
       <div class="health" id="health"></div>
+      <details class="explain">
+        <summary>ماذا تعني هذه المؤشرات؟</summary>
+        <dl>
+          <dt>نسبة الوصول</dt>
+          <dd>من كل 100 إيميل أُرسل، كم وصل فعلاً إلى صندوق البريد. الطبيعي فوق 95%.</dd>
+          <dt>الارتداد (Bounce)</dt>
+          <dd>العنوان غير موجود أو فيه خطأ، مثل موظف ترك الشركة. يدل على جودة قائمة الإيميلات.</dd>
+          <dt>الحظر (Block)</dt>
+          <dd>العنوان موجود لكن سيرفر الشركة المستقبلة رفض الإيميل، غالباً بسبب نظام حماية أو لأن الدومين جديد.</dd>
+          <dt>الشكاوى (Spam)</dt>
+          <dd>عدد من ضغط "هذه رسالة مزعجة". إذا ارتفعت تتضرر سمعة الدومين.</dd>
+        </dl>
+      </details>
     </div>
   </section>
+
+  <section class="card insight" id="insight" hidden></section>
 
   <section class="grid g-kpi" id="kpis"></section>
 
@@ -166,7 +203,9 @@ footer .copy{direction:ltr;margin-top:6px;font-weight:700;color:var(--ink-2)}
   </section>
 </main>
 
-<footer>البيانات من SendGrid وتتحدث تلقائياً كل 5 دقائق تقريباً · الأوقات بتوقيت مسقط<div class="copy">© 2026 Moment Plus. All rights reserved.</div></footer>
+<footer>البيانات من SendGrid وتتحدث تلقائياً كل 5 دقائق تقريباً · الأوقات بتوقيت مسقط
+  <div class="made"><img src="moment-logo.png" alt="Moment Plus"><div class="t"><b>Built by Moment Plus</b>© 2026 Moment Plus. All rights reserved.</div></div>
+</footer>
 
 <script>
 const TZ = 'Asia/Muscat';
@@ -234,11 +273,13 @@ function render() {
   const st = (v, w, c, higherIsBad = true) => !hasData ? 'idle'
     : higherIsBad ? (v >= c ? 'crit' : v >= w ? 'warn' : 'good')
                   : (v <= c ? 'crit' : v <= w ? 'warn' : 'good');
+  const chips = hasData ? `<div class="chips"><span class="chip">ارتداد <b class="num">${fmt(T.bounces)}</b></span><span class="chip">حظر <b class="num">${fmt(T.blocks)}</b></span><span class="chip">غير صالح <b class="num">${fmt(T.invalid_emails)}</b></span></div>` : '';
   const H = [
-    ['نسبة الوصول', delivR, st(delivR, 95, 90, false), 'الهدف فوق 95%'],
-    ['نسبة الارتداد والحظر', bounceR, st(bounceR, 2, 5), 'يجب أن تبقى تحت 2%'],
+    ['نسبة الوصول', delivR, st(delivR, 95, 90, false), `الهدف فوق 95% · وصل <span class="num">${fmt(delivered)}</span> من <span class="num">${fmt(sent)}</span>`],
+    ['نسبة الارتداد والحظر', bounceR, st(bounceR, 2, 5), 'يجب أن تبقى تحت 2%' + chips],
     ['نسبة الشكاوى (Spam)', spamR, st(spamR, 0.1, 0.3), 'يجب أن تبقى تحت 0.1%'],
   ];
+  renderInsight(hasData, delivR, bounceR, spamR, pct(T.unique_opens || 0, delivered), T);
   document.getElementById('health').innerHTML = H.map(([n, v, s, h]) =>
     `<div class="hrow"><div><div class="label" style="color:var(--ink-2)">${n}</div><div class="hint">${h}</div></div>
      <div style="text-align:left"><div class="v num">${hasData ? pctStr(v, 2) : '—'}</div>${badge(s, LBL[s])}</div></div>`).join('');
@@ -255,6 +296,28 @@ function render() {
 
   renderBatches(sent, now);
   renderChart(now);
+}
+
+function renderInsight(hasData, delivR, bounceR, spamR, openR, T) {
+  const el = document.getElementById('insight');
+  if (!hasData) { el.hidden = true; return; }
+  const openTxt = openR >= 25 ? `نسبة الفتح <b class="num">${pctStr(openR)}</b> ممتازة، والجمهور متفاعل مع الإعلان.`
+    : openR >= 15 ? `نسبة الفتح <b class="num">${pctStr(openR)}</b> جيدة.`
+    : `نسبة الفتح <b class="num">${pctStr(openR)}</b> منخفضة، ويمكن تحسين عنوان الرسالة.`;
+  const lost = Math.round(bounceR);
+  let s, h, p;
+  if (bounceR >= 5 || spamR >= 0.3) {
+    s = 'crit'; h = 'الإعلان ناجح، لكن قائمة الإيميلات تحتاج تنظيف قبل المتابعة';
+    p = `${openTxt} في المقابل، حوالي <b class="num">${lost}</b> من كل 100 إيميل يرتد أو يُحظر (<span class="num">${fmt((T.bounces||0)+(T.blocks||0))}</span> إيميل). يُنصح بإيقاف الدفعات مؤقتاً وتنظيف القائمة لحماية سمعة الدومين.`;
+  } else if (bounceR >= 2 || delivR < 95 || spamR >= 0.1) {
+    s = 'warn'; h = 'الحملة تسير، مع مؤشرات تحتاج متابعة';
+    p = `${openTxt} نسبة الارتداد والحظر <b class="num">${pctStr(bounceR)}</b> أعلى من الحد المثالي، فراقبوها مع كل دفعة.`;
+  } else {
+    s = 'good'; h = 'الحملة تسير بشكل سليم';
+    p = `${openTxt} مؤشرات الوصول والارتداد والشكاوى ضمن الحدود الآمنة.`;
+  }
+  el.className = 'card insight ' + s; el.hidden = false;
+  el.innerHTML = `<div class="ic">${ICON[s]}</div><div><h3>${h}</h3><p>${p}</p></div>`;
 }
 
 function renderBatches(sent, now) {
