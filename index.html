@@ -1,0 +1,388 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>متابعة الحملة</title>
+<link rel="icon" href="tanweel-logo.png">
+<style>
+@font-face{font-family:K;src:url(fonts/noto-kufi-arabic-arabic-400-normal.woff2) format("woff2");font-weight:400;font-display:swap}
+@font-face{font-family:K;src:url(fonts/noto-kufi-arabic-arabic-700-normal.woff2) format("woff2");font-weight:700;font-display:swap}
+@font-face{font-family:K;src:url(fonts/noto-kufi-arabic-arabic-800-normal.woff2) format("woff2");font-weight:800;font-display:swap}
+@font-face{font-family:K;src:url(fonts/noto-kufi-arabic-latin-400-normal.woff2) format("woff2");font-weight:400;unicode-range:U+0000-00FF,U+2000-206F;font-display:swap}
+@font-face{font-family:K;src:url(fonts/noto-kufi-arabic-latin-700-normal.woff2) format("woff2");font-weight:700 800;unicode-range:U+0000-00FF,U+2000-206F;font-display:swap}
+
+:root{
+  --bg:#f6f4fc; --surface:#ffffff; --surface-2:#f3effd; --line:#e6e0f6;
+  --ink:#1d1840; --ink-2:#4a4570; --muted:#7a7599;
+  --brand:#5a3fd0; --brand-deep:#16105a; --lav:#c8b6f5;
+  --series:#5a3fd0; --plan:#9a95b5; --grid:#ece8f7;
+  --good:#1f8a5b; --good-bg:#e5f5ed; --warn:#a86400; --warn-bg:#fff3df; --crit:#c2362f; --crit-bg:#fde8e6;
+  --shadow:0 1px 2px rgba(22,16,90,.06),0 6px 20px rgba(22,16,90,.06);
+}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
+  --bg:#0e0b26; --surface:#18143a; --surface-2:#211c4a; --line:#2e2862;
+  --ink:#efecff; --ink-2:#c3bde6; --muted:#8f89b8;
+  --brand:#a68cff; --lav:#c8b6f5; --series:#a68cff; --plan:#7a74a3; --grid:#262055;
+  --good:#5ccf98; --good-bg:#123a2a; --warn:#f2b259; --warn-bg:#3a2a10; --crit:#ff7d73; --crit-bg:#401917;
+  --shadow:none;
+}}
+:root[data-theme="dark"]{
+  --bg:#0e0b26; --surface:#18143a; --surface-2:#211c4a; --line:#2e2862;
+  --ink:#efecff; --ink-2:#c3bde6; --muted:#8f89b8;
+  --brand:#a68cff; --lav:#c8b6f5; --series:#a68cff; --plan:#7a74a3; --grid:#262055;
+  --good:#5ccf98; --good-bg:#123a2a; --warn:#f2b259; --warn-bg:#3a2a10; --crit:#ff7d73; --crit-bg:#401917;
+  --shadow:none;
+}
+*{box-sizing:border-box}
+html,body{margin:0}
+body{font-family:K,system-ui,sans-serif;background:var(--bg);color:var(--ink);line-height:1.7;-webkit-font-smoothing:antialiased}
+.num{font-variant-numeric:tabular-nums;direction:ltr;unicode-bidi:isolate}
+.wrap{max-width:1180px;margin:0 auto;padding:0 20px}
+
+/* hero */
+.hero{color:#fff;position:relative;overflow:hidden;
+  background:radial-gradient(circle at 10% 15%,rgba(200,182,245,.5),transparent 40%),radial-gradient(circle at 90% 120%,rgba(122,82,224,.7),transparent 45%),linear-gradient(135deg,#0f0b45 0%,#241a8c 55%,#3d2bb5 100%)}
+.hero .wrap{display:flex;align-items:center;gap:20px;padding-top:28px;padding-bottom:84px}
+.hero img{height:52px;width:auto;flex:none}
+.hero .divider{width:1px;align-self:stretch;margin:6px 4px;background:rgba(255,255,255,.25)}
+.byline{font-size:11.5px;letter-spacing:.5px;color:var(--lav);font-weight:700;direction:ltr;text-align:right}
+.hero .brand{font-size:12px;letter-spacing:2px;color:var(--lav);font-weight:700}
+.hero h1{margin:2px 0 0;font-size:clamp(22px,4vw,32px);font-weight:800;line-height:1.35}
+.hero .sub{color:#d8cfff;font-size:14px}
+.hero .grow{flex:1;min-width:0}
+.live{display:inline-flex;align-items:center;gap:8px;background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.25);border-radius:99px;padding:6px 14px;font-size:13px;white-space:nowrap}
+.dot{width:9px;height:9px;border-radius:50%;background:#5ccf98;box-shadow:0 0 0 0 rgba(92,207,152,.7);animation:pulse 2s infinite}
+.dot.stale{background:#f2b259;animation:none}
+@keyframes pulse{70%{box-shadow:0 0 0 8px rgba(92,207,152,0)}100%{box-shadow:0 0 0 0 rgba(92,207,152,0)}}
+@media (prefers-reduced-motion:reduce){.dot{animation:none}}
+.spark{position:absolute;fill:#fff;opacity:.85}
+
+/* layout */
+main{margin-top:-60px;position:relative;padding-bottom:40px}
+.card{background:var(--surface);border:1px solid var(--line);border-radius:18px;padding:20px 22px;box-shadow:var(--shadow)}
+.grid{display:grid;gap:16px}
+.g-hero{grid-template-columns:1.35fr 1fr}
+.g-kpi{grid-template-columns:repeat(4,1fr);margin-top:16px}
+.g-two{grid-template-columns:1.6fr 1fr;margin-top:16px}
+@media (max-width:900px){.g-hero,.g-two{grid-template-columns:1fr}.g-kpi{grid-template-columns:repeat(2,1fr)}}
+@media (max-width:600px){.wrap{padding:0 16px}.hero .wrap{flex-wrap:wrap;gap:14px}.hero img{height:40px}.hero .divider{display:none}.live{order:3;width:100%;justify-content:center}}
+h2{font-size:16px;font-weight:800;margin:0 0 12px;display:flex;align-items:center;gap:8px}
+h2::before{content:"";width:14px;height:14px;flex:none;background:linear-gradient(135deg,var(--lav),var(--brand));clip-path:polygon(50% 0,62% 38%,100% 50%,62% 62%,50% 100%,38% 62%,0 50%,38% 38%)}
+.label{color:var(--muted);font-size:13px;font-weight:700}
+
+/* progress hero */
+.big{font-size:clamp(40px,7vw,60px);font-weight:800;line-height:1.1;margin:6px 0 2px}
+.big small{font-size:.38em;color:var(--muted);font-weight:700}
+.pbar{height:14px;background:var(--surface-2);border-radius:99px;overflow:hidden;margin:14px 0 8px}
+.pbar i{display:block;height:100%;border-radius:99px;background:linear-gradient(270deg,#5fdcd6,#8fb4f0,#b49cff);transition:width .8s}
+.prow{display:flex;justify-content:space-between;color:var(--ink-2);font-size:13px;gap:10px;flex-wrap:wrap}
+
+/* health */
+.health{display:flex;flex-direction:column;gap:10px}
+.hrow{display:flex;align-items:center;justify-content:space-between;gap:10px;padding:10px 12px;border-radius:12px;background:var(--surface-2)}
+.hrow .v{font-weight:800;font-size:18px}
+.badge{display:inline-flex;align-items:center;gap:6px;font-size:12px;font-weight:700;padding:3px 10px;border-radius:99px;white-space:nowrap}
+.badge svg{width:13px;height:13px}
+.b-good{color:var(--good);background:var(--good-bg)}
+.b-warn{color:var(--warn);background:var(--warn-bg)}
+.b-crit{color:var(--crit);background:var(--crit-bg)}
+.b-idle{color:var(--muted);background:var(--surface-2)}
+.hint{font-size:12px;color:var(--muted)}
+
+/* kpi */
+.kpi .v{font-size:28px;font-weight:800;line-height:1.2;margin-top:4px}
+.kpi .s{font-size:13px;color:var(--ink-2)}
+
+/* chart */
+.chart{position:relative}
+.chart svg{width:100%;height:auto;display:block;overflow:visible}
+.legend{display:flex;gap:18px;font-size:13px;color:var(--ink-2);margin-bottom:6px;flex-wrap:wrap}
+.legend span{display:inline-flex;align-items:center;gap:6px}
+.sw{width:18px;height:0;border-top:2px solid var(--series)}
+.sw.plan{border-top:2px dashed var(--plan)}
+.tip{position:absolute;pointer-events:none;background:var(--surface);border:1px solid var(--line);box-shadow:0 6px 20px rgba(0,0,0,.15);border-radius:10px;padding:8px 12px;font-size:12.5px;white-space:nowrap;opacity:0;transition:opacity .12s;z-index:2}
+.tip b{display:block;font-size:12px;color:var(--muted);font-weight:700}
+
+/* table */
+.tbl{width:100%;border-collapse:collapse;font-size:13.5px}
+.tbl th{text-align:right;color:var(--muted);font-weight:700;font-size:12px;padding:8px 10px;border-bottom:1px solid var(--line)}
+.tbl td{padding:8px 10px;border-bottom:1px solid var(--line)}
+.tbl tr:last-child td{border-bottom:0}
+.tbl tr.now td{background:var(--surface-2)}
+.tbl .r{text-align:left}
+.scroll{max-height:470px;overflow:auto;margin:0 -8px;padding:0 8px}
+.daysep td{color:var(--brand);font-weight:800;font-size:12.5px;background:transparent!important;padding-top:14px}
+.empty{padding:30px;text-align:center;color:var(--muted)}
+footer{text-align:center;color:var(--muted);font-size:12px;padding:10px 16px 30px}
+footer .copy{direction:ltr;margin-top:6px;font-weight:700;color:var(--ink-2)}
+.sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+</style>
+</head>
+<body>
+
+<header class="hero">
+  <svg class="spark" style="right:45%;top:18px;width:16px" viewBox="0 0 10 10" aria-hidden="true"><path d="M5 0L6.2 3.8 10 5 6.2 6.2 5 10 3.8 6.2 0 5 3.8 3.8Z"/></svg>
+  <svg class="spark" style="left:22%;bottom:70px;width:10px;opacity:.5" viewBox="0 0 10 10" aria-hidden="true"><path d="M5 0L6.2 3.8 10 5 6.2 6.2 5 10 3.8 6.2 0 5 3.8 3.8Z"/></svg>
+  <div class="wrap">
+    <img src="tanweel-logo.png" alt="Tanweel تنويل">
+    <span class="divider" aria-hidden="true"></span>
+    <div class="grow">
+      <h1 id="title">متابعة الحملة</h1>
+      <div class="sub" id="sub"></div>
+      <div class="byline">Built by Moment Plus</div>
+    </div>
+    <div class="live" id="live"><span class="dot" id="dot"></span><span id="liveText">جارٍ التحميل…</span></div>
+  </div>
+</header>
+
+<main class="wrap">
+  <section class="grid g-hero">
+    <div class="card">
+      <div class="label">تم الإرسال</div>
+      <div class="big"><span class="num" id="sent">0</span> <small>من <span class="num" id="planned">0</span></small></div>
+      <div class="pbar" role="progressbar" aria-label="نسبة الإنجاز" aria-valuemin="0" aria-valuemax="100" id="pbarWrap"><i id="pbar" style="width:0"></i></div>
+      <div class="prow"><span>الإنجاز <b class="num" id="pct">0%</b></span><span>المتبقي <b class="num" id="left">0</b></span><span id="nextBatch"></span></div>
+    </div>
+    <div class="card">
+      <h2>صحة الإرسال</h2>
+      <div class="health" id="health"></div>
+    </div>
+  </section>
+
+  <section class="grid g-kpi" id="kpis"></section>
+
+  <section class="grid g-two">
+    <div class="card">
+      <h2>تقدّم الإرسال مقابل الخطة</h2>
+      <div class="legend"><span><i class="sw"></i>المُرسل فعلياً</span><span><i class="sw plan"></i>الخطة</span></div>
+      <div class="chart" id="chart" dir="ltr"><div class="tip" id="tip"></div></div>
+      <div class="sr"><table id="chartTable"></table></div>
+    </div>
+    <div class="card">
+      <h2>الدفعات</h2>
+      <div class="scroll"><table class="tbl" id="batches"></table></div>
+    </div>
+  </section>
+</main>
+
+<footer>البيانات من SendGrid وتتحدث تلقائياً كل 5 دقائق تقريباً · الأوقات بتوقيت مسقط<div class="copy">© 2026 Moment Plus. All rights reserved.</div></footer>
+
+<script>
+const TZ = 'Asia/Muscat';
+const fmt = n => (n ?? 0).toLocaleString('en-US');
+const pct = (a, b, d = 1) => b > 0 ? (a / b * 100) : 0;
+const pctStr = (v, d = 1) => v.toLocaleString('en-US', {maximumFractionDigits: d, minimumFractionDigits: v > 0 && v < 10 ? d : 0}) + '%';
+const tFmt = (d, opts) => new Intl.DateTimeFormat('ar-OM-u-nu-latn', {timeZone: TZ, ...opts}).format(d);
+const ICON = {
+  good: '<svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M3 8.5l3.2 3L13 4.5"/></svg>',
+  warn: '<svg viewBox="0 0 16 16" fill="currentColor"><path d="M8 1.5l7 12.5H1z"/><rect x="7.2" y="5.5" width="1.6" height="4.5" fill="var(--warn-bg)"/><rect x="7.2" y="11" width="1.6" height="1.6" fill="var(--warn-bg)"/></svg>',
+  crit: '<svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M4 4l8 8M12 4l-8 8"/></svg>',
+  idle: '<svg viewBox="0 0 16 16" fill="currentColor"><circle cx="8" cy="8" r="3"/></svg>'
+};
+const badge = (s, t) => `<span class="badge b-${s}">${ICON[s]}${t}</span>`;
+const LBL = {good: 'ممتاز', warn: 'انتبه', crit: 'أوقفوا الإرسال', idle: 'لا بيانات'};
+
+let CFG, DATA;
+
+async function load() {
+  const bust = '?t=' + Date.now();
+  const [c, d] = await Promise.all([
+    fetch('config.json' + bust, {cache: 'no-store'}).then(r => r.json()),
+    fetch('data.json' + bust, {cache: 'no-store'}).then(r => r.json()).catch(() => ({totals: {}, snapshots: []}))
+  ]);
+  CFG = c; DATA = d;
+  CFG._batches = CFG.batches.map(b => ({...b, date: new Date(b.at + CFG.timezone_offset)}));
+  let cum = 0; CFG._batches.forEach(b => { cum += b.count; b.cum = cum; });
+  render();
+}
+
+function render() {
+  const T = DATA.totals || {};
+  const sent = T.requests || 0, delivered = T.delivered || 0, planned = CFG.planned_total;
+  const now = new Date();
+
+  document.getElementById('title').textContent = CFG.campaign;
+  document.getElementById('sub').textContent = CFG.domain;
+  document.title = CFG.campaign + ' · متابعة مباشرة';
+
+  // live
+  const up = DATA.updated_at ? new Date(DATA.updated_at) : null;
+  const mins = up ? Math.round((now - up) / 60000) : null;
+  document.getElementById('dot').classList.toggle('stale', !up || mins > 20);
+  document.getElementById('liveText').textContent = !up ? 'بانتظار أول تحديث'
+    : (mins < 1 ? 'مباشر · تحديث الآن' : `مباشر · آخر تحديث قبل ${mins} د`);
+
+  // progress
+  const p = Math.min(100, pct(sent, planned));
+  document.getElementById('sent').textContent = fmt(sent);
+  document.getElementById('planned').textContent = fmt(planned);
+  document.getElementById('pct').textContent = pctStr(p);
+  document.getElementById('left').textContent = fmt(Math.max(0, planned - sent));
+  document.getElementById('pbar').style.width = p + '%';
+  document.getElementById('pbarWrap').setAttribute('aria-valuenow', p.toFixed(1));
+  const nb = CFG._batches.find(b => b.date > now);
+  document.getElementById('nextBatch').innerHTML = nb
+    ? `الدفعة التالية <b>#${nb.n}</b> الساعة <b class="num">${tFmt(nb.date, {hour: '2-digit', minute: '2-digit', hour12: false})}</b>`
+    : (sent >= planned ? '<b>اكتملت الحملة ✦</b>' : 'انتهت مواعيد الدفعات');
+
+  // health
+  const hasData = sent > 0;
+  const bounceR = pct((T.bounces || 0) + (T.blocks || 0), sent);
+  const spamR = pct(T.spam_reports || 0, delivered);
+  const delivR = pct(delivered, sent);
+  const st = (v, w, c, higherIsBad = true) => !hasData ? 'idle'
+    : higherIsBad ? (v >= c ? 'crit' : v >= w ? 'warn' : 'good')
+                  : (v <= c ? 'crit' : v <= w ? 'warn' : 'good');
+  const H = [
+    ['نسبة الوصول', delivR, st(delivR, 95, 90, false), 'الهدف فوق 95%'],
+    ['نسبة الارتداد والحظر', bounceR, st(bounceR, 2, 5), 'يجب أن تبقى تحت 2%'],
+    ['نسبة الشكاوى (Spam)', spamR, st(spamR, 0.1, 0.3), 'يجب أن تبقى تحت 0.1%'],
+  ];
+  document.getElementById('health').innerHTML = H.map(([n, v, s, h]) =>
+    `<div class="hrow"><div><div class="label" style="color:var(--ink-2)">${n}</div><div class="hint">${h}</div></div>
+     <div style="text-align:left"><div class="v num">${hasData ? pctStr(v, 2) : '—'}</div>${badge(s, LBL[s])}</div></div>`).join('');
+
+  // KPIs
+  const K = [
+    ['وصل للبريد', delivered, hasData ? pctStr(delivR) + ' من المُرسل' : '—'],
+    ['فتحوا الإيميل', T.unique_opens || 0, delivered ? pctStr(pct(T.unique_opens || 0, delivered)) + ' من الواصل' : '—'],
+    ['ضغطوا على رابط', T.unique_clicks || 0, delivered ? pctStr(pct(T.unique_clicks || 0, delivered)) + ' من الواصل' : '—'],
+    ['ألغوا الاشتراك', T.unsubscribes || 0, delivered ? pctStr(pct(T.unsubscribes || 0, delivered), 2) + ' من الواصل' : '—'],
+  ];
+  document.getElementById('kpis').innerHTML = K.map(([n, v, s]) =>
+    `<div class="card kpi"><div class="label">${n}</div><div class="v num">${fmt(v)}</div><div class="s">${s}</div></div>`).join('');
+
+  renderBatches(sent, now);
+  renderChart(now);
+}
+
+function renderBatches(sent, now) {
+  let html = '<tr><th>#</th><th>الوقت</th><th class="r">العدد</th><th>الحالة</th></tr>';
+  let lastDay = '', prevCum = 0;
+  const cur = [...CFG._batches].reverse().find(b => b.date <= now);
+  for (const b of CFG._batches) {
+    const day = tFmt(b.date, {weekday: 'long', day: 'numeric', month: 'long'});
+    if (day !== lastDay) { html += `<tr class="daysep"><td colspan="4">${day}</td></tr>`; lastDay = day; }
+    let s, t;
+    if (sent >= b.cum) { s = 'good'; t = 'تم'; }
+    else if (b.date <= now && sent > prevCum) { s = 'warn'; t = `جارٍ · ${fmt(sent - prevCum)}`; }
+    else if (b.date <= now) { s = 'warn'; t = 'متأخرة'; }
+    else { s = 'idle'; t = 'قادمة'; }
+    html += `<tr class="${cur && cur.n === b.n ? 'now' : ''}"><td class="num">${b.n}</td>
+      <td class="num">${tFmt(b.date, {hour: '2-digit', minute: '2-digit', hour12: false})}</td>
+      <td class="r num">${fmt(b.count)}</td><td>${badge(s, t)}</td></tr>`;
+    prevCum = b.cum;
+  }
+  document.getElementById('batches').innerHTML = html;
+}
+
+function renderChart(now) {
+  const el = document.getElementById('chart');
+  const W = Math.max(300, el.clientWidth || 720), H = W >= 500 ? 380 : 300, m = {l: 48, r: 12, t: 26, b: 34}, GAP = W < 500 ? 14 : 22;
+  const B = CFG._batches;
+  const snaps = (DATA.snapshots || []).map(s => ({d: new Date(s.t), v: s.requests})).filter(s => !isNaN(s.d));
+  // one time window per sending day (overnight gap is skipped)
+  const byDay = {};
+  B.forEach(b => { const k = b.at.slice(0, 10); (byDay[k] ||= []).push(b.date); });
+  const segs = Object.values(byDay).map(ds => ({a: new Date(Math.min(...ds) - 3600e3), b: new Date(Math.max(...ds) + 3600e3)}));
+  const lastSnap = snaps.length ? snaps[snaps.length - 1].d : null;
+  if (lastSnap && lastSnap > segs[segs.length - 1].b) segs[segs.length - 1].b = lastSnap;
+  const t0 = segs[0].a, tEnd = segs[segs.length - 1].b;
+  const span = segs.reduce((a, g) => a + (g.b - g.a), 0);
+  const usable = W - m.l - m.r - GAP * (segs.length - 1);
+  segs.forEach((g, i) => { g.x0 = i ? segs[i - 1].x1 + GAP : m.l; g.x1 = g.x0 + (g.b - g.a) / span * usable; });
+  const x = d => {
+    for (let i = 0; i < segs.length; i++) {
+      const g = segs[i];
+      if (d < g.a) return i ? g.x0 - GAP / 2 : g.x0;
+      if (d <= g.b) return g.x0 + (d - g.a) / (g.b - g.a) * (g.x1 - g.x0);
+    }
+    return segs[segs.length - 1].x1;
+  };
+  const xInv = px => {
+    for (const g of segs) if (px <= g.x1 + GAP / 2) return new Date(+g.a + Math.max(0, Math.min(1, (px - g.x0) / (g.x1 - g.x0))) * (g.b - g.a));
+    return tEnd;
+  };
+  const yMax = Math.max(CFG.planned_total, ...snaps.map(s => s.v)) * 1.05;
+  const y = v => H - m.b - v / yMax * (H - m.t - m.b);
+
+  // plan step line
+  let plan = `M${x(t0)},${y(0)}`; let c = 0;
+  B.forEach(b => { plan += ` H${x(b.date)} V${y(c += b.count)}`; });
+  plan += ` H${x(tEnd)}`;
+  const planAt = d => B.filter(b => b.date <= d).reduce((a, b) => a + b.count, 0);
+
+  // actual line (step-after between snapshots)
+  let act = '';
+  if (snaps.length) {
+    act = `M${x(snaps[0].d)},${y(snaps[0].v)}`;
+    for (let i = 1; i < snaps.length; i++) act += ` H${x(snaps[i].d)} V${y(snaps[i].v)}`;
+    const lastX = x(now);
+    if (lastX > x(snaps[snaps.length - 1].d)) act += ` H${lastX}`;
+  }
+
+  // grid + axes
+  let g = '';
+  const step = yMax > 8000 ? 2000 : yMax > 4000 ? 1000 : 500;
+  for (let v = 0; v <= yMax; v += step)
+    g += `<line x1="${m.l}" x2="${W - m.r}" y1="${y(v)}" y2="${y(v)}" stroke="var(--grid)"/>
+          <text x="${m.l - 8}" y="${y(v) + 4}" text-anchor="end" font-size="11" fill="var(--muted)">${fmt(v)}</text>`;
+  let ticks = '';
+  const every = W < 500 ? 4 : 2;
+  segs.forEach((g, i) => {
+    for (let t = new Date(Math.ceil(g.a / 3600e3) * 3600e3); t <= g.b; t = new Date(+t + every * 3600e3))
+      if (x(t) > g.x0 + 10 && x(t) < g.x1 - 16) ticks += `<text x="${x(t)}" y="${H - m.b + 18}" text-anchor="middle" font-size="11" fill="var(--muted)">${tFmt(t, {hour: '2-digit', minute: '2-digit', hour12: false})}</text>`;
+    ticks += `<text x="${(g.x0 + g.x1) / 2}" y="${m.t - 12}" text-anchor="middle" font-size="12" font-weight="700" fill="var(--ink-2)">${tFmt(g.a, {weekday: 'long'})}</text>`;
+    if (i) ticks += `<rect x="${g.x0 - GAP + 4}" y="${m.t}" width="${GAP - 8}" height="${H - m.t - m.b}" fill="var(--surface-2)" rx="3"/>`;
+  });
+  const nowLine = segs.some(g => now >= g.a && now <= g.b)
+    ? `<line x1="${x(now)}" x2="${x(now)}" y1="${m.t}" y2="${H - m.b}" stroke="var(--muted)" stroke-dasharray="2 3"/>
+       <text x="${x(now) + 4}" y="${m.t + 12}" font-size="11" fill="var(--muted)">الآن</text>` : '';
+  const last = snaps[snaps.length - 1];
+  const lastLbl = last ? `<circle cx="${x(last.d)}" cy="${y(last.v)}" r="5" fill="var(--series)" stroke="var(--surface)" stroke-width="2"/>
+       <text x="${x(last.d) - 8}" y="${y(last.v) - 10}" text-anchor="end" font-size="12" font-weight="700" fill="var(--ink)">${fmt(last.v)}</text>` : '';
+
+  el.querySelector('svg')?.remove();
+  el.insertAdjacentHTML('beforeend', `
+  <svg viewBox="0 0 ${W} ${H}" role="img" aria-label="منحنى عدد الإيميلات المرسلة مقابل الخطة">
+    ${g}
+    <line x1="${m.l}" x2="${W - m.r}" y1="${y(0)}" y2="${y(0)}" stroke="var(--line)"/>
+    ${ticks}${nowLine}
+    <path d="${plan}" fill="none" stroke="var(--plan)" stroke-width="2" stroke-dasharray="5 4"/>
+    ${act ? `<path d="${act}" fill="none" stroke="var(--series)" stroke-width="2.5" stroke-linejoin="round"/>` : ''}
+    ${lastLbl}
+    <text x="${W - m.r}" y="${y(CFG.planned_total) - 6}" text-anchor="end" font-size="11" fill="var(--muted)">الخطة ${fmt(CFG.planned_total)}</text>
+    <line id="xh" x1="0" x2="0" y1="${m.t}" y2="${H - m.b}" stroke="var(--ink-2)" stroke-width="1" opacity="0"/>
+    <circle id="xp" r="5" fill="var(--series)" stroke="var(--surface)" stroke-width="2" opacity="0"/>
+    <rect x="${m.l}" y="${m.t}" width="${W - m.l - m.r}" height="${H - m.t - m.b}" fill="transparent" id="hit"/>
+  </svg>`);
+
+  // hover
+  const svg = el.querySelector('svg'), tip = document.getElementById('tip');
+  const xh = svg.querySelector('#xh'), xp = svg.querySelector('#xp');
+  const actualAt = d => { let v = 0; for (const s of snaps) { if (s.d <= d) v = s.v; else break; } return v; };
+  svg.querySelector('#hit').addEventListener('pointermove', e => {
+    const r = svg.getBoundingClientRect(), sx = (e.clientX - r.left) / r.width * W;
+    const d = xInv(sx);
+    const a = d <= now ? actualAt(d) : null, pl = planAt(d);
+    xh.setAttribute('x1', sx); xh.setAttribute('x2', sx); xh.setAttribute('opacity', .5);
+    if (a !== null && snaps.length) { xp.setAttribute('cx', sx); xp.setAttribute('cy', y(a)); xp.setAttribute('opacity', 1); } else xp.setAttribute('opacity', 0);
+    tip.innerHTML = `<b>${tFmt(d, {weekday: 'short', hour: '2-digit', minute: '2-digit', hour12: false})}</b>
+      المُرسل: <span class="num">${a === null || !snaps.length ? '—' : fmt(a)}</span><br>الخطة: <span class="num">${fmt(pl)}</span>`;
+    const px = (sx / W) * r.width;
+    tip.style.left = Math.min(px + 12, r.width - 150) + 'px'; tip.style.top = '10px'; tip.style.opacity = 1;
+  });
+  svg.querySelector('#hit').addEventListener('pointerleave', () => { tip.style.opacity = 0; xh.setAttribute('opacity', 0); xp.setAttribute('opacity', 0); });
+
+  // accessible table view
+  document.getElementById('chartTable').innerHTML = '<caption>المُرسل مع الوقت</caption><tr><th>الوقت</th><th>المُرسل</th></tr>' +
+    snaps.map(s => `<tr><td>${s.d.toISOString()}</td><td>${s.v}</td></tr>`).join('');
+}
+
+let rz; addEventListener('resize', () => { clearTimeout(rz); rz = setTimeout(() => CFG && renderChart(new Date()), 150); });
+load().catch(e => { document.getElementById('liveText').textContent = 'تعذّر تحميل البيانات'; console.error(e); });
+setInterval(() => load().catch(() => {}), 60000);
+</script>
+</body>
+</html>
