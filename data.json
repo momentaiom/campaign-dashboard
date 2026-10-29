@@ -1,5 +1,5 @@
 {
- "updated_at": "2026-10-29T16:27:43+00:00",
+ "updated_at": "2026-10-29T21:22:15+00:00",
  "category": "tanweel-20261029-1504-d78e",
  "totals": {
   "requests": 4648,
@@ -11,7 +11,7 @@
   "clicks": 166,
   "unique_clicks": 16,
   "bounces": 222,
-  "blocks": 210,
+  "blocks": 211,
   "spam_reports": 0,
   "unsubscribes": 0,
   "invalid_emails": 22,
@@ -31,7 +31,7 @@
    "clicks": 166,
    "unique_clicks": 16,
    "bounces": 222,
-   "blocks": 210,
+   "blocks": 211,
    "spam_reports": 0,
    "unsubscribes": 0,
    "invalid_emails": 22,
