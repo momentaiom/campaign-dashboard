@@ -4,7 +4,7 @@
   "start_date": "2026-10-29",
   "planned_total": 9444,
   "timezone_offset": "+04:00",
-  "status": "running",
+  "status": "paused",
   "source": "tanweel-sender",
   "batches": [
     {
