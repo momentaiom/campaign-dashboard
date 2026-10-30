@@ -1,11 +1,11 @@
 {
- "updated_at": "2026-10-30T01:13:30+00:00",
+ "updated_at": "2026-10-30T07:15:47+00:00",
  "category": "tanweel-20261029-1504-d78e",
  "totals": {
   "requests": 4648,
   "processed": 4626,
   "delivered": 4140,
-  "deferred": 25,
+  "deferred": 371,
   "opens": 1177,
   "unique_opens": 1108,
   "clicks": 166,
@@ -25,7 +25,7 @@
    "requests": 4648,
    "processed": 4626,
    "delivered": 4140,
-   "deferred": 25,
+   "deferred": 371,
    "opens": 1177,
    "unique_opens": 1108,
    "clicks": 166,
