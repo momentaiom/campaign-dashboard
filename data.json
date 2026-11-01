@@ -1,5 +1,5 @@
 {
- "updated_at": "2026-10-31T22:25:02+00:00",
+ "updated_at": "2026-11-01T01:23:24+00:00",
  "category": "tanweel-20261029-1504-d78e",
  "totals": {
   "requests": 4648,
@@ -60,6 +60,25 @@
   },
   {
    "date": "2026-10-31",
+   "requests": 0,
+   "processed": 0,
+   "delivered": 0,
+   "deferred": 0,
+   "opens": 0,
+   "unique_opens": 0,
+   "clicks": 0,
+   "unique_clicks": 0,
+   "bounces": 0,
+   "blocks": 0,
+   "spam_reports": 0,
+   "unsubscribes": 0,
+   "invalid_emails": 0,
+   "bounce_drops": 0,
+   "spam_report_drops": 0,
+   "unsubscribe_drops": 0
+  },
+  {
+   "date": "2026-11-01",
    "requests": 0,
    "processed": 0,
    "delivered": 0,
