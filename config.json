@@ -4,7 +4,7 @@
   "start_date": "2026-10-29",
   "planned_total": 9427,
   "timezone_offset": "+04:00",
-  "status": "paused",
+  "status": "running",
   "source": "tanweel-sender",
   "category": "tanweel-20261029-1504-d78e",
   "batches": [
@@ -40,62 +40,56 @@
     },
     {
       "n": 6,
-      "at": "2026-11-03T11:33",
-      "count": 478,
-      "status": "planned"
+      "at": "2026-11-03T12:03",
+      "count": 531,
+      "status": "sent"
     },
     {
       "n": 7,
-      "at": "2026-11-03T12:33",
-      "count": 478,
+      "at": "2026-11-03T13:03",
+      "count": 531,
       "status": "planned"
     },
     {
       "n": 8,
-      "at": "2026-11-03T13:33",
-      "count": 478,
+      "at": "2026-11-03T14:03",
+      "count": 531,
       "status": "planned"
     },
     {
       "n": 9,
-      "at": "2026-11-03T14:33",
-      "count": 478,
+      "at": "2026-11-03T15:03",
+      "count": 531,
       "status": "planned"
     },
     {
       "n": 10,
-      "at": "2026-11-03T15:33",
-      "count": 478,
+      "at": "2026-11-03T16:03",
+      "count": 532,
       "status": "planned"
     },
     {
       "n": 11,
-      "at": "2026-11-03T16:33",
-      "count": 478,
+      "at": "2026-11-03T17:03",
+      "count": 532,
       "status": "planned"
     },
     {
       "n": 12,
-      "at": "2026-11-03T17:33",
-      "count": 479,
+      "at": "2026-11-03T18:03",
+      "count": 532,
       "status": "planned"
     },
     {
       "n": 13,
-      "at": "2026-11-03T18:33",
-      "count": 479,
+      "at": "2026-11-03T19:03",
+      "count": 532,
       "status": "planned"
     },
     {
       "n": 14,
-      "at": "2026-11-03T19:33",
-      "count": 479,
-      "status": "planned"
-    },
-    {
-      "n": 15,
-      "at": "2026-11-03T20:33",
-      "count": 479,
+      "at": "2026-11-03T20:03",
+      "count": 532,
       "status": "planned"
     }
   ]
