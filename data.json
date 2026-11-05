@@ -1,5 +1,5 @@
 {
- "updated_at": "2026-11-05T13:59:42+00:00",
+ "updated_at": "2026-11-05T14:09:45+00:00",
  "category": "tanweel-20261104-2104-b8bf",
  "source": "tanweel-sender",
  "totals": {
@@ -17,7 +17,7 @@
   "unique_opens": 1477,
   "clicks": 285,
   "unique_clicks": 26,
-  "unsubscribes": 0,
+  "unsubscribes": 1,
   "unsubscribe_drops": 0
  },
  "per_day": [
@@ -56,7 +56,7 @@
    "unique_opens": 1022,
    "clicks": 206,
    "unique_clicks": 17,
-   "unsubscribes": 0,
+   "unsubscribes": 1,
    "unsubscribe_drops": 0
   }
  ],
