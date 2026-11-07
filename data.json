@@ -1,5 +1,5 @@
 {
- "updated_at": "2026-11-07T10:25:14+00:00",
+ "updated_at": "2026-11-07T10:35:17+00:00",
  "category": "tanweel-20261104-2104-b8bf",
  "source": "tanweel-sender",
  "totals": {
@@ -13,8 +13,8 @@
   "invalid_emails": 102,
   "spam_reports": 1,
   "spam_report_drops": 0,
-  "opens": 5806,
-  "unique_opens": 5704,
+  "opens": 5807,
+  "unique_opens": 5705,
   "clicks": 841,
   "unique_clicks": 79,
   "unsubscribes": 2,
@@ -90,8 +90,8 @@
    "invalid_emails": 11,
    "spam_reports": 0,
    "spam_report_drops": 0,
-   "opens": 1021,
-   "unique_opens": 1011,
+   "opens": 1022,
+   "unique_opens": 1012,
    "clicks": 70,
    "unique_clicks": 7,
    "unsubscribes": 0,
@@ -1751,6 +1751,15 @@
    "requests": 27812,
    "delivered": 23968,
    "unique_opens": 5704,
+   "unique_clicks": 79,
+   "bounces": 1780,
+   "spam_reports": 1
+  },
+  {
+   "t": "2026-11-07T10:35:17+00:00",
+   "requests": 27812,
+   "delivered": 23968,
+   "unique_opens": 5705,
    "unique_clicks": 79,
    "bounces": 1780,
    "spam_reports": 1
