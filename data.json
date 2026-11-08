@@ -1,11 +1,11 @@
 {
- "updated_at": "2026-11-08T00:50:12+00:00",
+ "updated_at": "2026-11-08T01:00:15+00:00",
  "category": "tanweel-20261104-2104-b8bf",
  "source": "tanweel-sender",
  "totals": {
   "requests": 35383,
   "processed": 35260,
-  "delivered": 30660,
+  "delivered": 30661,
   "deferred": 2740,
   "bounces": 2275,
   "blocks": 2382,
@@ -82,7 +82,7 @@
    "date": "2026-11-07",
    "requests": 12113,
    "processed": 12081,
-   "delivered": 10741,
+   "delivered": 10742,
    "deferred": 140,
    "bounces": 790,
    "blocks": 568,
@@ -2354,6 +2354,15 @@
    "t": "2026-11-08T00:40:08+00:00",
    "requests": 35383,
    "delivered": 30660,
+   "unique_opens": 7409,
+   "unique_clicks": 110,
+   "bounces": 2275,
+   "spam_reports": 1
+  },
+  {
+   "t": "2026-11-08T01:00:15+00:00",
+   "requests": 35383,
+   "delivered": 30661,
    "unique_opens": 7409,
    "unique_clicks": 110,
    "bounces": 2275,
