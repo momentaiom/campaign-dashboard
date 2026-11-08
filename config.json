@@ -4,7 +4,7 @@
   "start_date": "2026-11-04",
   "planned_total": 49692,
   "timezone_offset": "+04:00",
-  "status": "running",
+  "status": "done",
   "source": "tanweel-sender",
   "category": "tanweel-20261104-2104-b8bf",
   "batches": [
@@ -466,9 +466,9 @@
     },
     {
       "n": 77,
-      "at": "2026-11-08T21:30",
+      "at": "2026-11-08T20:16",
       "count": 757,
-      "status": "planned"
+      "status": "sent"
     }
   ]
 }
