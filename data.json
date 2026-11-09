@@ -1,5 +1,5 @@
 {
- "updated_at": "2026-11-09T17:46:27+00:00",
+ "updated_at": "2026-11-09T17:56:31+00:00",
  "category": "tanweel-20261109-0836-7b5e",
  "source": "tanweel-sender",
  "totals": {
@@ -8,7 +8,7 @@
   "delivered": 3524,
   "deferred": 30,
   "bounces": 4,
-  "blocks": 187,
+  "blocks": 188,
   "bounce_drops": 187,
   "invalid_emails": 44,
   "spam_reports": 0,
@@ -28,7 +28,7 @@
    "delivered": 3524,
    "deferred": 30,
    "bounces": 4,
-   "blocks": 187,
+   "blocks": 188,
    "bounce_drops": 187,
    "invalid_emails": 44,
    "spam_reports": 0,
