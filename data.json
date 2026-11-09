@@ -1,12 +1,12 @@
 {
- "updated_at": "2026-11-09T15:25:25+00:00",
+ "updated_at": "2026-11-09T15:35:29+00:00",
  "category": "tanweel-20261109-0836-7b5e",
  "source": "tanweel-sender",
  "totals": {
   "requests": 3941,
   "processed": 3710,
   "delivered": 3524,
-  "deferred": 0,
+  "deferred": 16,
   "bounces": 4,
   "blocks": 187,
   "bounce_drops": 187,
@@ -26,7 +26,7 @@
    "requests": 3941,
    "processed": 3710,
    "delivered": 3524,
-   "deferred": 0,
+   "deferred": 16,
    "bounces": 4,
    "blocks": 187,
    "bounce_drops": 187,
