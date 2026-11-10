@@ -4,121 +4,121 @@
   "start_date": "2026-11-10",
   "planned_total": 49846,
   "timezone_offset": "+04:00",
-  "status": "ready",
+  "status": "running",
   "source": "tanweel-sender",
   "category": "tanweel-20261110-1721-dd9e",
   "batches": [
     {
       "n": 1,
-      "at": "2026-11-10T17:21",
+      "at": "2026-11-10T17:27",
       "count": 859,
-      "status": "planned"
+      "status": "sent"
     },
     {
       "n": 2,
-      "at": "2026-11-10T17:36",
+      "at": "2026-11-10T17:42",
       "count": 1000,
       "status": "planned"
     },
     {
       "n": 3,
-      "at": "2026-11-10T17:51",
+      "at": "2026-11-10T17:57",
       "count": 1000,
       "status": "planned"
     },
     {
       "n": 4,
-      "at": "2026-11-10T18:06",
+      "at": "2026-11-10T18:12",
       "count": 1000,
       "status": "planned"
     },
     {
       "n": 5,
-      "at": "2026-11-10T18:21",
+      "at": "2026-11-10T18:27",
       "count": 1000,
       "status": "planned"
     },
     {
       "n": 6,
-      "at": "2026-11-10T18:36",
+      "at": "2026-11-10T18:42",
       "count": 1000,
       "status": "planned"
     },
     {
       "n": 7,
-      "at": "2026-11-10T18:51",
+      "at": "2026-11-10T18:57",
       "count": 1000,
       "status": "planned"
     },
     {
       "n": 8,
-      "at": "2026-11-10T19:06",
+      "at": "2026-11-10T19:12",
       "count": 1000,
       "status": "planned"
     },
     {
       "n": 9,
-      "at": "2026-11-10T19:21",
+      "at": "2026-11-10T19:27",
       "count": 1000,
       "status": "planned"
     },
     {
       "n": 10,
-      "at": "2026-11-10T19:36",
+      "at": "2026-11-10T19:42",
       "count": 1000,
       "status": "planned"
     },
     {
       "n": 11,
-      "at": "2026-11-10T19:51",
+      "at": "2026-11-10T19:57",
       "count": 1000,
       "status": "planned"
     },
     {
       "n": 12,
-      "at": "2026-11-10T20:06",
+      "at": "2026-11-10T20:12",
       "count": 1000,
       "status": "planned"
     },
     {
       "n": 13,
-      "at": "2026-11-10T20:21",
+      "at": "2026-11-10T20:27",
       "count": 1000,
       "status": "planned"
     },
     {
       "n": 14,
-      "at": "2026-11-10T20:36",
+      "at": "2026-11-10T20:42",
       "count": 1000,
       "status": "planned"
     },
     {
       "n": 15,
-      "at": "2026-11-10T20:51",
+      "at": "2026-11-10T20:57",
       "count": 1000,
       "status": "planned"
     },
     {
       "n": 16,
-      "at": "2026-11-10T21:06",
+      "at": "2026-11-10T21:12",
       "count": 1000,
       "status": "planned"
     },
     {
       "n": 17,
-      "at": "2026-11-10T21:21",
+      "at": "2026-11-10T21:27",
       "count": 1000,
       "status": "planned"
     },
     {
       "n": 18,
-      "at": "2026-11-10T21:36",
+      "at": "2026-11-10T21:42",
       "count": 1000,
       "status": "planned"
     },
     {
       "n": 19,
-      "at": "2026-11-10T21:51",
+      "at": "2026-11-10T21:57",
       "count": 1000,
       "status": "planned"
     },
