@@ -2,83 +2,10 @@
   "campaign": "الدفعة الثالثة",
   "domain": "tanweel.om",
   "start_date": "2026-11-09",
-  "planned_total": 9990,
+  "planned_total": 0,
   "timezone_offset": "+04:00",
   "status": "done",
   "source": "tanweel-sender",
   "category": "tanweel-20261109-0836-7b5e",
-  "batches": [
-    {
-      "n": 1,
-      "at": "2026-11-09T09:00",
-      "count": 288,
-      "status": "sent"
-    },
-    {
-      "n": 2,
-      "at": "2026-11-09T10:00",
-      "count": 480,
-      "status": "sent"
-    },
-    {
-      "n": 3,
-      "at": "2026-11-09T11:00",
-      "count": 672,
-      "status": "sent"
-    },
-    {
-      "n": 4,
-      "at": "2026-11-09T12:00",
-      "count": 864,
-      "status": "sent"
-    },
-    {
-      "n": 5,
-      "at": "2026-11-09T13:00",
-      "count": 960,
-      "status": "sent"
-    },
-    {
-      "n": 6,
-      "at": "2026-11-09T14:00",
-      "count": 960,
-      "status": "sent"
-    },
-    {
-      "n": 7,
-      "at": "2026-11-10T12:01",
-      "count": 961,
-      "status": "sent"
-    },
-    {
-      "n": 8,
-      "at": "2026-11-10T12:01",
-      "count": 961,
-      "status": "sent"
-    },
-    {
-      "n": 9,
-      "at": "2026-11-10T12:01",
-      "count": 961,
-      "status": "sent"
-    },
-    {
-      "n": 10,
-      "at": "2026-11-10T12:01",
-      "count": 961,
-      "status": "sent"
-    },
-    {
-      "n": 11,
-      "at": "2026-11-10T12:02",
-      "count": 961,
-      "status": "sent"
-    },
-    {
-      "n": 12,
-      "at": "2026-11-10T12:02",
-      "count": 961,
-      "status": "sent"
-    }
-  ]
+  "batches": []
 }
