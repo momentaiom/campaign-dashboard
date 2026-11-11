@@ -1,5 +1,5 @@
 {
- "updated_at": "2026-11-11T15:14:44+00:00",
+ "updated_at": "2026-11-11T15:24:48+00:00",
  "category": "tanweel-20261110-1721-dd9e",
  "source": "tanweel-sender",
  "totals": {
@@ -8,15 +8,15 @@
   "delivered": 34380,
   "deferred": 447,
   "bounces": 2105,
-  "blocks": 1909,
+  "blocks": 1910,
   "bounce_drops": 1,
   "invalid_emails": 629,
   "spam_reports": 2,
   "spam_report_drops": 0,
-  "opens": 3303,
-  "unique_opens": 3146,
-  "clicks": 1870,
-  "unique_clicks": 148,
+  "opens": 3315,
+  "unique_opens": 3156,
+  "clicks": 1874,
+  "unique_clicks": 149,
   "unsubscribes": 2,
   "unsubscribe_drops": 0
  },
@@ -47,15 +47,15 @@
    "delivered": 15270,
    "deferred": 0,
    "bounces": 831,
-   "blocks": 860,
+   "blocks": 861,
    "bounce_drops": 0,
    "invalid_emails": 236,
    "spam_reports": 1,
    "spam_report_drops": 0,
-   "opens": 1310,
-   "unique_opens": 1243,
-   "clicks": 705,
-   "unique_clicks": 69,
+   "opens": 1322,
+   "unique_opens": 1253,
+   "clicks": 709,
+   "unique_clicks": 70,
    "unsubscribes": 2,
    "unsubscribe_drops": 0
   }
@@ -1057,6 +1057,15 @@
    "delivered": 34380,
    "unique_opens": 3146,
    "unique_clicks": 148,
+   "bounces": 2105,
+   "spam_reports": 2
+  },
+  {
+   "t": "2026-11-11T15:24:48+00:00",
+   "requests": 38946,
+   "delivered": 34380,
+   "unique_opens": 3156,
+   "unique_clicks": 149,
    "bounces": 2105,
    "spam_reports": 2
   }
