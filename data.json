@@ -1,13 +1,13 @@
 {
- "updated_at": "2026-11-15T14:21:49+00:00",
+ "updated_at": "2026-11-15T19:53:02+00:00",
  "category": "tanweel-20261110-1721-dd9e",
  "totals": {
   "requests": 45050,
   "processed": 44332,
   "delivered": 39818,
   "deferred": 1102,
-  "opens": 4217,
-  "unique_opens": 3893,
+  "opens": 4221,
+  "unique_opens": 3894,
   "clicks": 2101,
   "unique_clicks": 172,
   "bounces": 2399,
@@ -121,8 +121,8 @@
    "processed": 0,
    "delivered": 0,
    "deferred": 0,
-   "opens": 16,
-   "unique_opens": 10,
+   "opens": 20,
+   "unique_opens": 11,
    "clicks": 0,
    "unique_clicks": 0,
    "bounces": 0,
@@ -1581,6 +1581,15 @@
    "requests": 45050,
    "delivered": 39818,
    "unique_opens": 3893,
+   "unique_clicks": 172,
+   "bounces": 2399,
+   "spam_reports": 2
+  },
+  {
+   "t": "2026-11-15T19:53:02+00:00",
+   "requests": 45050,
+   "delivered": 39818,
+   "unique_opens": 3894,
    "unique_clicks": 172,
    "bounces": 2399,
    "spam_reports": 2
