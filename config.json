@@ -222,13 +222,13 @@
       "n": 36,
       "at": "2026-11-16T16:56",
       "count": 1000,
-      "status": "sending"
+      "status": "sent"
     },
     {
       "n": 37,
       "at": "2026-11-16T17:06",
       "count": 1000,
-      "status": "planned"
+      "status": "sent"
     },
     {
       "n": 38,
