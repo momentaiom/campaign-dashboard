@@ -1,504 +1,162 @@
 {
-  "campaign": "الحملة الخامسة",
+  "campaign": "الحملة VIP ",
   "domain": "tanweel.om",
-  "start_date": "2026-11-16",
-  "planned_total": 59513,
+  "start_date": "2026-11-17",
+  "planned_total": 9992,
   "timezone_offset": "+04:00",
-  "status": "done",
+  "status": "ready",
   "source": "tanweel-sender",
-  "category": "tanweel-20261116-1106-3706",
+  "category": "tanweel-20261117-1657-ff61",
   "batches": [
     {
       "n": 1,
-      "at": "2026-11-16T11:06",
-      "count": 305,
-      "status": "sent"
+      "at": "2026-11-17T16:57",
+      "count": 128,
+      "status": "planned"
     },
     {
       "n": 2,
-      "at": "2026-11-16T11:16",
-      "count": 509,
-      "status": "sent"
+      "at": "2026-11-17T17:07",
+      "count": 213,
+      "status": "planned"
     },
     {
       "n": 3,
-      "at": "2026-11-16T11:26",
-      "count": 713,
-      "status": "sent"
+      "at": "2026-11-17T17:17",
+      "count": 298,
+      "status": "planned"
     },
     {
       "n": 4,
-      "at": "2026-11-16T11:36",
-      "count": 917,
-      "status": "sent"
+      "at": "2026-11-17T17:27",
+      "count": 384,
+      "status": "planned"
     },
     {
       "n": 5,
-      "at": "2026-11-16T11:46",
-      "count": 1000,
-      "status": "sent"
+      "at": "2026-11-17T17:37",
+      "count": 427,
+      "status": "planned"
     },
     {
       "n": 6,
-      "at": "2026-11-16T11:56",
-      "count": 1000,
-      "status": "sent"
+      "at": "2026-11-17T17:47",
+      "count": 427,
+      "status": "planned"
     },
     {
       "n": 7,
-      "at": "2026-11-16T12:06",
-      "count": 1000,
-      "status": "sent"
+      "at": "2026-11-17T17:57",
+      "count": 427,
+      "status": "planned"
     },
     {
       "n": 8,
-      "at": "2026-11-16T12:16",
-      "count": 1000,
-      "status": "sent"
+      "at": "2026-11-17T18:07",
+      "count": 427,
+      "status": "planned"
     },
     {
       "n": 9,
-      "at": "2026-11-16T12:26",
-      "count": 1000,
-      "status": "sent"
+      "at": "2026-11-17T18:17",
+      "count": 427,
+      "status": "planned"
     },
     {
       "n": 10,
-      "at": "2026-11-16T12:36",
-      "count": 1000,
-      "status": "sent"
+      "at": "2026-11-17T18:27",
+      "count": 427,
+      "status": "planned"
     },
     {
       "n": 11,
-      "at": "2026-11-16T12:46",
-      "count": 1000,
-      "status": "sent"
+      "at": "2026-11-17T18:37",
+      "count": 427,
+      "status": "planned"
     },
     {
       "n": 12,
-      "at": "2026-11-16T12:56",
-      "count": 1000,
-      "status": "sent"
+      "at": "2026-11-17T18:47",
+      "count": 427,
+      "status": "planned"
     },
     {
       "n": 13,
-      "at": "2026-11-16T13:06",
-      "count": 1000,
-      "status": "sent"
+      "at": "2026-11-17T18:57",
+      "count": 427,
+      "status": "planned"
     },
     {
       "n": 14,
-      "at": "2026-11-16T13:16",
-      "count": 1000,
-      "status": "sent"
+      "at": "2026-11-17T19:07",
+      "count": 427,
+      "status": "planned"
     },
     {
       "n": 15,
-      "at": "2026-11-16T13:26",
-      "count": 1000,
-      "status": "sent"
+      "at": "2026-11-17T19:17",
+      "count": 427,
+      "status": "planned"
     },
     {
       "n": 16,
-      "at": "2026-11-16T13:36",
-      "count": 1000,
-      "status": "sent"
+      "at": "2026-11-17T19:27",
+      "count": 427,
+      "status": "planned"
     },
     {
       "n": 17,
-      "at": "2026-11-16T13:46",
-      "count": 1000,
-      "status": "sent"
+      "at": "2026-11-17T19:37",
+      "count": 427,
+      "status": "planned"
     },
     {
       "n": 18,
-      "at": "2026-11-16T13:56",
-      "count": 1000,
-      "status": "sent"
+      "at": "2026-11-17T19:47",
+      "count": 427,
+      "status": "planned"
     },
     {
       "n": 19,
-      "at": "2026-11-16T14:06",
-      "count": 1000,
-      "status": "sent"
+      "at": "2026-11-17T19:57",
+      "count": 427,
+      "status": "planned"
     },
     {
       "n": 20,
-      "at": "2026-11-16T14:16",
-      "count": 1000,
-      "status": "sent"
+      "at": "2026-11-17T20:07",
+      "count": 427,
+      "status": "planned"
     },
     {
       "n": 21,
-      "at": "2026-11-16T14:26",
-      "count": 1000,
-      "status": "sent"
+      "at": "2026-11-17T20:17",
+      "count": 427,
+      "status": "planned"
     },
     {
       "n": 22,
-      "at": "2026-11-16T14:36",
-      "count": 1000,
-      "status": "sent"
+      "at": "2026-11-17T20:27",
+      "count": 427,
+      "status": "planned"
     },
     {
       "n": 23,
-      "at": "2026-11-16T14:46",
-      "count": 1000,
-      "status": "sent"
+      "at": "2026-11-17T20:37",
+      "count": 427,
+      "status": "planned"
     },
     {
       "n": 24,
-      "at": "2026-11-16T14:56",
-      "count": 1000,
-      "status": "sent"
+      "at": "2026-11-17T20:47",
+      "count": 428,
+      "status": "planned"
     },
     {
       "n": 25,
-      "at": "2026-11-16T15:06",
-      "count": 1000,
-      "status": "sent"
-    },
-    {
-      "n": 26,
-      "at": "2026-11-16T15:16",
-      "count": 1000,
-      "status": "sent"
-    },
-    {
-      "n": 27,
-      "at": "2026-11-16T15:26",
-      "count": 1000,
-      "status": "sent"
-    },
-    {
-      "n": 28,
-      "at": "2026-11-16T15:36",
-      "count": 1000,
-      "status": "sent"
-    },
-    {
-      "n": 29,
-      "at": "2026-11-16T15:46",
-      "count": 1000,
-      "status": "sent"
-    },
-    {
-      "n": 30,
-      "at": "2026-11-16T15:56",
-      "count": 1000,
-      "status": "sent"
-    },
-    {
-      "n": 31,
-      "at": "2026-11-16T16:06",
-      "count": 1000,
-      "status": "sent"
-    },
-    {
-      "n": 32,
-      "at": "2026-11-16T16:16",
-      "count": 1000,
-      "status": "sent"
-    },
-    {
-      "n": 33,
-      "at": "2026-11-16T16:26",
-      "count": 1000,
-      "status": "sent"
-    },
-    {
-      "n": 34,
-      "at": "2026-11-16T16:36",
-      "count": 1000,
-      "status": "sent"
-    },
-    {
-      "n": 35,
-      "at": "2026-11-16T16:46",
-      "count": 1000,
-      "status": "sent"
-    },
-    {
-      "n": 36,
-      "at": "2026-11-16T16:56",
-      "count": 1000,
-      "status": "sent"
-    },
-    {
-      "n": 37,
-      "at": "2026-11-16T17:06",
-      "count": 1000,
-      "status": "sent"
-    },
-    {
-      "n": 38,
-      "at": "2026-11-16T17:16",
-      "count": 1000,
-      "status": "sent"
-    },
-    {
-      "n": 39,
-      "at": "2026-11-16T17:26",
-      "count": 1000,
-      "status": "sent"
-    },
-    {
-      "n": 40,
-      "at": "2026-11-16T17:36",
-      "count": 1000,
-      "status": "sent"
-    },
-    {
-      "n": 41,
-      "at": "2026-11-16T17:46",
-      "count": 1000,
-      "status": "sent"
-    },
-    {
-      "n": 42,
-      "at": "2026-11-16T17:56",
-      "count": 1000,
-      "status": "sent"
-    },
-    {
-      "n": 43,
-      "at": "2026-11-16T18:06",
-      "count": 1000,
-      "status": "sent"
-    },
-    {
-      "n": 44,
-      "at": "2026-11-16T18:16",
-      "count": 1000,
-      "status": "sent"
-    },
-    {
-      "n": 45,
-      "at": "2026-11-16T18:26",
-      "count": 1000,
-      "status": "sent"
-    },
-    {
-      "n": 46,
-      "at": "2026-11-16T18:36",
-      "count": 1000,
-      "status": "sent"
-    },
-    {
-      "n": 47,
-      "at": "2026-11-16T18:46",
-      "count": 1000,
-      "status": "sent"
-    },
-    {
-      "n": 48,
-      "at": "2026-11-16T18:56",
-      "count": 1000,
-      "status": "sent"
-    },
-    {
-      "n": 49,
-      "at": "2026-11-16T19:06",
-      "count": 1000,
-      "status": "sent"
-    },
-    {
-      "n": 50,
-      "at": "2026-11-16T19:16",
-      "count": 1000,
-      "status": "sent"
-    },
-    {
-      "n": 51,
-      "at": "2026-11-16T19:26",
-      "count": 1000,
-      "status": "sent"
-    },
-    {
-      "n": 52,
-      "at": "2026-11-16T19:36",
-      "count": 1000,
-      "status": "sent"
-    },
-    {
-      "n": 53,
-      "at": "2026-11-16T19:46",
-      "count": 1000,
-      "status": "sent"
-    },
-    {
-      "n": 54,
-      "at": "2026-11-16T19:56",
-      "count": 1000,
-      "status": "sent"
-    },
-    {
-      "n": 55,
-      "at": "2026-11-16T20:06",
-      "count": 1000,
-      "status": "sent"
-    },
-    {
-      "n": 56,
-      "at": "2026-11-16T20:16",
-      "count": 1000,
-      "status": "sent"
-    },
-    {
-      "n": 57,
-      "at": "2026-11-16T20:26",
-      "count": 1000,
-      "status": "sent"
-    },
-    {
-      "n": 58,
-      "at": "2026-11-16T20:36",
-      "count": 1000,
-      "status": "sent"
-    },
-    {
-      "n": 59,
-      "at": "2026-11-16T20:46",
-      "count": 1000,
-      "status": "sent"
-    },
-    {
-      "n": 60,
-      "at": "2026-11-16T20:56",
-      "count": 1000,
-      "status": "sent"
-    },
-    {
-      "n": 61,
-      "at": "2026-11-16T21:00",
-      "count": 48,
-      "status": "sent"
-    },
-    {
-      "n": 62,
-      "at": "2026-11-16T21:00",
-      "count": 48,
-      "status": "sent"
-    },
-    {
-      "n": 63,
-      "at": "2026-11-16T21:00",
-      "count": 48,
-      "status": "sent"
-    },
-    {
-      "n": 64,
-      "at": "2026-11-16T21:00",
-      "count": 48,
-      "status": "sent"
-    },
-    {
-      "n": 65,
-      "at": "2026-11-16T21:00",
-      "count": 48,
-      "status": "sent"
-    },
-    {
-      "n": 66,
-      "at": "2026-11-16T21:00",
-      "count": 48,
-      "status": "sent"
-    },
-    {
-      "n": 67,
-      "at": "2026-11-16T21:00",
-      "count": 48,
-      "status": "sent"
-    },
-    {
-      "n": 68,
-      "at": "2026-11-16T21:00",
-      "count": 48,
-      "status": "sent"
-    },
-    {
-      "n": 69,
-      "at": "2026-11-16T21:00",
-      "count": 48,
-      "status": "sent"
-    },
-    {
-      "n": 70,
-      "at": "2026-11-16T21:00",
-      "count": 49,
-      "status": "sent"
-    },
-    {
-      "n": 71,
-      "at": "2026-11-16T21:00",
-      "count": 49,
-      "status": "sent"
-    },
-    {
-      "n": 72,
-      "at": "2026-11-16T21:00",
-      "count": 49,
-      "status": "sent"
-    },
-    {
-      "n": 73,
-      "at": "2026-11-16T21:00",
-      "count": 49,
-      "status": "sent"
-    },
-    {
-      "n": 74,
-      "at": "2026-11-16T21:00",
-      "count": 49,
-      "status": "sent"
-    },
-    {
-      "n": 75,
-      "at": "2026-11-16T21:00",
-      "count": 49,
-      "status": "sent"
-    },
-    {
-      "n": 76,
-      "at": "2026-11-16T21:01",
-      "count": 49,
-      "status": "sent"
-    },
-    {
-      "n": 77,
-      "at": "2026-11-16T21:01",
-      "count": 49,
-      "status": "sent"
-    },
-    {
-      "n": 78,
-      "at": "2026-11-16T21:01",
-      "count": 49,
-      "status": "sent"
-    },
-    {
-      "n": 79,
-      "at": "2026-11-16T21:01",
-      "count": 49,
-      "status": "sent"
-    },
-    {
-      "n": 80,
-      "at": "2026-11-16T21:01",
-      "count": 49,
-      "status": "sent"
-    },
-    {
-      "n": 81,
-      "at": "2026-11-16T21:01",
-      "count": 49,
-      "status": "sent"
-    },
-    {
-      "n": 82,
-      "at": "2026-11-16T21:01",
-      "count": 49,
-      "status": "sent"
+      "at": "2026-11-17T20:57",
+      "count": 428,
+      "status": "planned"
     }
   ]
 }
