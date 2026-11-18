@@ -84,13 +84,13 @@
       "n": 13,
       "at": "2026-11-18T11:46",
       "count": 427,
-      "status": "sending"
+      "status": "sent"
     },
     {
       "n": 14,
       "at": "2026-11-18T11:56",
       "count": 427,
-      "status": "planned"
+      "status": "sent"
     },
     {
       "n": 15,
